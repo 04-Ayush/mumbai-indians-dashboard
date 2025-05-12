@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mumbai Indians IPL 2025 Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <img src="images/logo.png" alt="Mumbai Indians Logo" class="logo" />
+        <h1>Mumbai Indians</h1>
+    </header>
+
+    <section class="team-stats">
+        <h2>Team Stats</h2>
+        <ul>
+            <li>Matches Played: 14</li>
+            <li>Wins: 8</li>
+            <li>Losses: 6</li>
+            <li>Win Percentage: 57.14%</li>
+            <li>Net Run Rate: +0.305</li>
+            <li>Total Points: 16</li>
+        </ul>
+        <canvas id="winRateChart"></canvas>
+    </section>
+
+    <section class="players">
+        <div class="top-batters">
+            <h2>Top 3 Batters</h2>
+            <div class="player-card">
+                <img src="images/player1.png" alt="Suryakumar Yadav" />
+                <h3>Suryakumar Yadav</h3>
+                <p>Runs: 510 | Avg: 51.0 | SR: 145.2</p>
+            </div>
+            <div class="player-card">
+                <img src="images/player2.png" alt="Ryan Rickelton" />
+                <h3>Ryan Rickelton</h3>
+                <p>Runs: 336 | Avg: 33.6 | SR: 130.1</p>
+            </div>
+            <div class="player-card">
+                <img src="images/player3.png" alt="Rohit Sharma" />
+                <h3>Rohit Sharma</h3>
+                <p>Runs: 300 | Avg: 30.0 | SR: 120.3</p>
+            </div>
+        </div>
+
+        <div class="top-bowlers">
+            <h2>Top 3 Bowlers</h2>
+            <div class="player-card">
+                <img src="images/player4.png" alt="Trent Boult" />
+                <h3>Trent Boult</h3>
+                <p>Wickets: 18 | Econ: 7.5 | BBI: 4/21</p>
+            </div>
+            <div class="player-card">
+                <img src="images/player5.png" alt="Jasprit Bumrah" />
+                <h3>Jasprit Bumrah</h3>
+                <p>Wickets: 13 | Econ: 8.1 | BBI: 3/19</p>
+            </div>
+            <div class="player-card">
+                <img src="images/player6.png" alt="Hardik Pandya" />
+                <h3>Hardik Pandya</h3>
+                <p>Wickets: 13 | Econ: 8.0 | BBI: 3/22</p>
+            </div>
+        </div>
+    </section>
+    <section class="live-counter">
+        <h2>Live Stats</h2>
+        <div class="counters">
+            <div class="counter-box">
+                <h3 id="winCounter">0</h3>
+                <p>Total Wins</p>
+            </div>
+            <div class="counter-box">
+                <h3 id="runCounter">0</h3>
+                <p>Total Runs This Season</p>
+            </div>
+            <div class="counter-box">
+                <h3 id="wicketCounter">0</h3>
+                <p>Total Wickets</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="match-results">
+        <h2>Match Results</h2>
+        <p>✅ | ❌ | ✅ | ✅ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ | ✅ | ❌ | ✅</p>
+    </section>
+
+    <section class="points-table">
+        <h2>Points Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>P</th>
+                    <th>W</th>
+                    <th>L</th>
+                    <th>NRR</th>
+                    <th>Pts</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight">
+                    <td>Mumbai Indians</td>
+                    <td>14</td>
+                    <td>8</td>
+                    <td>6</td>
+                    <td>+0.305</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>Chennai Super Kings</td>
+                    <td>14</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>+0.482</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td>Rajasthan Royals</td>
+                    <td>14</td>
+                    <td>8</td>
+                    <td>6</td>
+                    <td>+0.341</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>Royal Challengers Bangalore</td>
+                    <td>14</td>
+                    <td>7</td>
+                    <td>7</td>
+                    <td>-0.150</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>Delhi Capitals</td>
+                    <td>14</td>
+                    <td>6</td>
+                    <td>8</td>
+                    <td>-0.112</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>Kolkata Knight Riders</td>
+                    <td>14</td>
+                    <td>5</td>
+                    <td>9</td>
+                    <td>-0.245</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="fixtures">
+        <h2>Upcoming Fixtures</h2>
+        <ul>
+            <li>vs CSK - May 15, 2025 at Wankhede Stadium, Mumbai</li>
+            <li>vs RCB - May 18, 2025 at M. Chinnaswamy Stadium, Bengaluru</li>
+            <li>vs RR - May 22, 2025 at Sawai Mansingh Stadium, Jaipur</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mumbai Indians Fan Dashboard. Built with 💙</p>
+    </footer>
+
+    <script>
+        const ctx = document.getElementById('winRateChart').getContext('2d');
+
+        const winRateChart = new Chart(ctx, {
+            type: 'doughnut', // change to doughnut for better visuals
+            data: {
+                labels: ['Wins', 'Losses'],
+                datasets: [{
+                    label: 'Win/Loss Ratio',
+                    data: [8, 6],
+                    backgroundColor: [
+                        'rgba(76, 175, 80, 0.9)',     // green (wins)
+                        'rgba(244, 67, 54, 0.9)'      // red (losses)
+                    ],
+                    borderColor: [
+                        'rgba(46, 125, 50, 1)',
+                        'rgba(211, 47, 47, 1)'
+                    ],
+                    borderWidth: 3,
+                    hoverOffset: 15,
+                    cutout: '60%',
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#333',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: '#333',
+                        titleColor: '#fff',
+                        bodyColor: '#fff',
+                        padding: 10,
+                        cornerRadius: 6
+                    }
+                },
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                }
+            }
+        });
+    </script>
+    <script>
+        // Function to animate the counters
+        function animateCounter(id, end, duration) {
+            let start = 0;
+            const stepTime = Math.abs(Math.floor(duration / end));
+            const obj = document.getElementById(id);
+
+            const timer = setInterval(() => {
+                start++;
+                obj.textContent = start;
+                if (start === end) clearInterval(timer);
+            }, stepTime);
+        }
+
+        // When the window loads, animate all counters
+        window.onload = function () {
+            animateCounter("winCounter", 8, 1000);      // Example: 8 total wins
+            animateCounter("runCounter", 2250, 1500);    // Example: 2250 total runs
+            animateCounter("wicketCounter", 76, 1200);   // Example: 76 total wickets
+        };
+    </script>
+
+
+
+</body>
+
+</html>
