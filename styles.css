@@ -12,6 +12,7 @@ body {
     line-height: 1.6;
 }
 
+
 /* Header */
 header {
     text-align: center;
@@ -30,6 +31,25 @@ header h1 {
     font-weight: 800;
     letter-spacing: 2px;
     color: #ffcb05;
+}
+.header-left {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-logo {
+    height: 40px;
+    width: auto;
+}
+
+.username {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
 }
 
 /* Section Titles */
